@@ -75,6 +75,12 @@ namespace ProjectCore.Logica.BL
             _context.SaveChanges();
         }
 
+        /// <summary>
+        //UPDATE PROJECT
+        /// <param name="id"></param>
+        /// /// <param name="title"></param>
+        /// /// <param name="details"></param>
+        /// /// <param name="expectedCompletionDate"></param>
         public void UpdateProjects(int id,
             string title,
             string details, DateTime? expectedCompletionDate)
@@ -82,6 +88,7 @@ namespace ProjectCore.Logica.BL
             DAL.Models.ProjectCoreContext _context = new DAL.Models.ProjectCoreContext();
 
             var projectEF = _context.Projects.Where(x => x.Id == id).FirstOrDefault();
+
             projectEF.Title = title;
             projectEF.Details = details;
             projectEF.ExpectedCompletionDate = expectedCompletionDate;
@@ -109,7 +116,6 @@ namespace ProjectCore.Logica.BL
             //aplica todo los cambio en la BD
             _context.SaveChanges();
         }
-
 
     }
 }

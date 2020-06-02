@@ -2,7 +2,7 @@
 
 namespace ProjectCore.Logica.Models.DB
 {
-    public class Projects 
+    public class Projects
     {
         public int Id { get; set; }
         public string Title { get; set; }

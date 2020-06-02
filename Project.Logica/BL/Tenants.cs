@@ -13,8 +13,7 @@ namespace ProjectCore.Logica.BL
         /// <param name="userId"></param>
         /// <returns></returns>
         public List<Models.DB.Tenants> GetTenants(string userId)
-        {
-                
+        {               
             DAL.Models.ProjectCoreContext _context = new DAL.Models.ProjectCoreContext();
 
             var listTenants = (from _tenants in _context.Tenants
@@ -26,11 +25,8 @@ namespace ProjectCore.Logica.BL
                                 Plan = _tenants.Plan,
                                 CreatedAt = _tenants.CreatedAt,
                                 UpdatedAt = _tenants.UpdatedAt
-
                               }).ToList();
-
             return listTenants;
         }
-
     }
 }
